@@ -1,3 +1,4 @@
+include ':restful'
 include ':core'
 include ':login'
 include ':app'

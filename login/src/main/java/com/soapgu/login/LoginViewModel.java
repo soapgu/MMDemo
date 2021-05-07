@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.databinding.Bindable;
 
 import com.soapgu.core.ObservableViewModel;
+import com.soapgu.core.api.ILogin;
 
 import javax.inject.Inject;
 import dagger.hilt.android.lifecycle.HiltViewModel;
@@ -15,9 +16,13 @@ public class LoginViewModel extends ObservableViewModel {
 
     private String message = "from LoginViewModel";
 
+    ILogin login;
+
     @Inject
-    public LoginViewModel(@NonNull Application application) {
+    public LoginViewModel(@NonNull Application application, ILogin login) {
         super(application);
+        this.login = login;
+        this.setMessage( String.format( "Login Result:%s",this.login.Login("admin","123456") ) );
     }
 
 
