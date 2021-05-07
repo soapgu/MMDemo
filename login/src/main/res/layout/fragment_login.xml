@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_light"
-    tools:context=".LoginFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="dataContext"
+            type="com.soapgu.login.LoginViewModel" />
+    </data>
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="28sp"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@android:color/holo_orange_light"
+        tools:context=".LoginFragment">
 
-</FrameLayout>
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="28sp"
+            android:text="@{dataContext.message}" />
+
+    </FrameLayout>
+</layout>
