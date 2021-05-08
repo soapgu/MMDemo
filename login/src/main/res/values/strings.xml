@@ -1,4 +1,7 @@
 <resources>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello Login fragment</string>
+    <string name="login">login</string>
+    <string name="loginHint">登陆</string>
+    <string name="passwordHint">密码</string>
 </resources>

@@ -14,7 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel;
 @HiltViewModel
 public class LoginViewModel extends ObservableViewModel {
 
-    private String message = "from LoginViewModel";
+    private String message = "please login";
 
     ILogin login;
 
@@ -22,7 +22,6 @@ public class LoginViewModel extends ObservableViewModel {
     public LoginViewModel(@NonNull Application application, ILogin login) {
         super(application);
         this.login = login;
-        this.setMessage( String.format( "Login Result:%s",this.login.Login("admin","123456") ) );
     }
 
 
@@ -34,5 +33,9 @@ public class LoginViewModel extends ObservableViewModel {
     public void setMessage(String message) {
         this.message = message;
         this.notifyPropertyChanged(BR.message);
+    }
+
+    public void CheckLogin( String userName, String password) {
+        this.setMessage( String.format( "Login Result:%s",this.login.Login(userName, password) ) );
     }
 }
