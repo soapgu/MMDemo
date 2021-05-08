@@ -1,5 +1,7 @@
 package com.soapgu.core.api;
 
+import io.reactivex.rxjava3.core.Single;
+
 public interface ILogin {
-    boolean Login( String userName , String passwrod );
+    Single<Boolean> Login(String userName , String passwrod );
 }
