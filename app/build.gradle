@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion rootProject.compileSdkVersion
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.soapgu.mmdemo"
-        minSdkVersion 25
-        targetSdkVersion 30
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -38,16 +38,16 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation "com.google.dagger:hilt-android:2.35.1"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "com.google.android.material:material:$rootProject.materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
+    implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
     implementation project(path: ':restful')
-    annotationProcessor "com.google.dagger:hilt-android-compiler:2.35.1"
-    implementation 'com.orhanobut:logger:2.2.0'
+    annotationProcessor "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
+    implementation "com.orhanobut:logger:$rootProject.loggerVersion"
     implementation project(path: ':core')
     implementation project(path: ':login')
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation "junit:junit:$rootProject.junitVersion"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.testExtJunit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espressoVersion"
 }
